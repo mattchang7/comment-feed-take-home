@@ -34,12 +34,15 @@ comment.createTable().catch((error) => {
 io.on("connection", (socket) => {
   console.log("A user connected: ", socket.id);
   socket.on("send-comment", (message) => {
-    io.emit("receive-comment", message);
+    io.emit("receive-comment", socket.id);
     console.log("new comment: ", message);
   });
   socket.on("delete-comments", () => {
     io.emit("clear-comments");
   });
+  socket.on("disconnect", () =>
+    console.log("A user disconnected: ", socket.id)
+  );
 });
 
 app.post("/createComment", function (request, response) {
