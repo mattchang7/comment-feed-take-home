@@ -3,27 +3,27 @@ export const Api = {
     const data = {
       method,
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
+        Accept: "application/json",
+        "Content-Type": "application/json",
       },
     };
     if (Object.keys(body).length > 0) {
       data.body = JSON.stringify(body);
     }
-    return fetch(url, data).then(response => {
+    return fetch(url, data).then((response) => {
       return response.json();
     });
   },
 
   get(url) {
-    return this.call(url, 'get');
+    return this.call(url, "get");
   },
 
   post(url, body = {}) {
-    return this.call(url, 'post', body);
+    return this.call(url, "post", body);
   },
 
   delete(url) {
-    return this.call(url, 'delete');
+    return this.call(url, "delete");
   },
 };
