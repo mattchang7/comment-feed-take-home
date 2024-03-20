@@ -1,5 +1,7 @@
 # Startup Instructions
 
+To startup app locally, runn the following commands:
+
 ```
 npm i
 cd frontend
@@ -7,6 +9,8 @@ npm i
 cd ..
 npm run dev
 ```
+
+To run the comment unit test, cd into frontend and run npm run test
 
 # Front-end Choose Your Own Adventure Take-Home
 
